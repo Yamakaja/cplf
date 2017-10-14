@@ -15,11 +15,12 @@ The cplf is a stream format, i.e. packets are encoded in a bytestream with indep
     TCP_ACK             = 0b00001000
     TCP_PSH             = 0b00010000
     TCP_RST             = 0b00010000
+    TCP_FIN             = 0b00010000
     
     [Stream]    := n*[Chunk]
     [Chunk]     := [type: uint8_t][time: uint32_t][source: uint32_t]( type & (TCP|UDP) ? [dport: uint16_t])
     
-    type        : (ICMP && (ICMP_PING_REQUEST || ICMP_OTHER) || TCP && (TCP_ACK || TCP_SYN || TCP_PSH || TCP_RST) || UDP)
+    type        : (ICMP && (ICMP_PING_REQUEST || ICMP_OTHER) || TCP && (TCP_ACK || TCP_SYN || TCP_PSH || TCP_RST || TCP_FIN) || UDP)
     source      : IPv4
 
 
