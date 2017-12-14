@@ -74,7 +74,7 @@ void process_file(char *file_name) {
         fread(&time, sizeof(time), 1, file);
         fread(&(src_ip.s_addr), sizeof(uint32_t), 1, file);
 
-        if (!(type & CPLF_ICMP))
+        if ((type & CPLF_PROTO_MASK) != CPLF_ICMP)
             fread(&port, sizeof(port), 1, file);
 
         time_t ltime = time;
