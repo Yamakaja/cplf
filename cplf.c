@@ -35,6 +35,7 @@ const char* protocol_str[] = {
 };
 
 const char* protocol_icmp_type[] = {
+    "",
     "PING",
     "OTHER"
 };
