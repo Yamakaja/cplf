@@ -18,7 +18,7 @@
 #define CPLF_TCP_ACK    0b0001000
 #define CPLF_TCP_PSH    0b0010000
 #define CPLF_TCP_RST    0b0100000
-#define CPLF_TCP_FIN    0b1100000
+#define CPLF_TCP_FIN    0b1000000
 #define CPLF_TCP_MASK   0b1111100
 
 #define KEY_TCP_SYN     0
@@ -92,7 +92,7 @@ void process_file(char *file_name) {
                         time_str,
                         ip_str,
                         protocol_str[protocol],
-                        protocol_icmp_type[(type & CPLF_ICMP_MASK) - 0b100]);
+                        protocol_icmp_type[(type & CPLF_ICMP_MASK) >> 2]);
                 break;
             case CPLF_TCP:
                 printf("[%s] [%s] %s %d%s%s%s%s%s\n",
