@@ -2,6 +2,8 @@
 
 The cplf is a stream format, i.e. packets are encoded in a bytestream with independent chunks
 
+Byte oder is little endian
+
 ## Format
 
     ICMP                = 0b00000001
